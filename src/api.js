@@ -10,7 +10,7 @@ const post = async (...args) => {
     const { data } = await axios.post.apply(null, args);
 
     return { queryResults: data, error: null };
-  } catch (error) {
+  } catch (err) {
     return {
       data: [],
       error: err.isAxiosError
