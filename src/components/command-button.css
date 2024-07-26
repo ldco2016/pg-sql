@@ -1,0 +1,7 @@
+.btn-cmd {
+  border-radius: 0;
+}
+
+.btn-cmd i.fas {
+  margin-right: 0.5rem !important;
+}

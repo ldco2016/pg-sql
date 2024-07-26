@@ -1,0 +1,22 @@
+// src/assets/scss/bootstrap-dark.scss
+
+
+
+// Override Bootstrap variables for dark theme
+$body-bg: #121212;
+$body-color: #ffffff;
+$primary: #bb86fc;
+$secondary: #03dac6;
+$success: #03dac6;
+$info: #2196f3;
+$warning: #ff9800;
+$danger: #cf6679;
+$light: #f8f9fa;
+$dark: #121212;
+$input-bg: #1d1d1d;
+$input-border-color: #333333;
+$input-color: #ffffff;
+$input-placeholder-color: #bbbbbb;
+
+// Import the rest of Bootstrap's components
+// @import '~bootstrap/scss/bootstrap';
