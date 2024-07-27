@@ -1,0 +1,23 @@
+.history {
+  overflow-y: auto;
+  max-height: 100%;
+}
+
+.history .react-codemirror2 {
+  max-height: 300px;
+  overflow: auto;
+}
+
+.history .react-codemirror2 .CodeMirror {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.history tr td:first-of-type {
+  width: 60px;
+  text-align: center;
+}
+
+.history td {
+  padding: 0.75rem 0.25rem;
+}

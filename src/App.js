@@ -22,9 +22,57 @@ const App = () => {
     api.provisionInstance();
   }, []);
 
+  const runQuery = async (val) => {
+    setLoading(true);
+    const result = await api.runQuery(val);
+    setLoading(false);
+    setResults([{ query: val, ...result }, ...results]);
+  };
+
+  const [lastResult] = results;
+
   return (
     <div className="app">
-      <Header />
+      <Header
+        loading={loading}
+        runQuery={runQuery}
+        value={value}
+        setValue={setValue}
+      />
+
+      <Split
+        className="split-horizontal"
+        direction="horizontal"
+        sizes={[75, 25]}
+      >
+        <Split className="split-vertical" direction="vertical" sizes={[75, 25]}>
+          <Card>
+            <CardBody>
+              <h4>Enter Query</h4>
+              <Editor value={value} setValue={setValue} />
+            </CardBody>
+          </Card>
+
+          <Card>
+            <CardBody>
+              {lastResult && lastResult.error ? (
+                <h3>{lastResult.error}</h3>
+              ) : (
+                <>
+                  <h4>Query Result</h4>
+                  <PagedResults results={results} />
+                </>
+              )}
+            </CardBody>
+          </Card>
+        </Split>
+
+        <Card>
+          <CardBody>
+            <History runQuery={runQuery} results={results} />
+          </CardBody>
+        </Card>
+      </Split>
     </div>
   );
 };

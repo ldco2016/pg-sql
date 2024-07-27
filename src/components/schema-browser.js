@@ -22,4 +22,33 @@ ORDER BY
 const SchemaBrowser = () => {
   const [open, setOpen] = useState(false);
   const [results, setResults] = useState([]);
+
+  const toggle = () => setOpen(!open);
+
+  useEffect(() => {
+    if (open) {
+      api.runQuery(schemaQuery).then(setResults);
+    }
+  }, [open]);
+
+  return (
+    <>
+      <CommandButton color="primary" size="lg" onClick={toggle}>
+        <Icon name="search" /> Schema
+      </CommandButton>
+      <Modal isOpen={open} toggle={toggle} size="lg">
+        <ModalHeader toggle={toggle}>Schema</ModalHeader>
+        <ModalBody>
+          <PagedResults results={[results]} />
+        </ModalBody>
+        <ModalFooter>
+          <Button color="primary" onClick={toggle}>
+            OK
+          </Button>
+        </ModalFooter>
+      </Modal>
+    </>
+  );
 };
+
+export default SchemaBrowser;

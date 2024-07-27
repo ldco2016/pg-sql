@@ -3,7 +3,7 @@ import "./header.css";
 import React from "react";
 import CommandButton from "./command-button";
 import { format } from "sql-formatter";
-// import SchemaBrowser from "./schema-browser";
+import SchemaBrowser from "./schema-browser";
 import api from "../api";
 import Icon from "./icon";
 
@@ -39,6 +39,7 @@ export default ({ loading, runQuery, value, setValue }) => {
         <Icon name="align-left" />
         Format
       </CommandButton>
+      <SchemaBrowser />
       <CommandButton color="primary" size="lg" onClick={onResetClick}>
         <Icon name="undo" />
         Reset Db
