@@ -3,6 +3,21 @@ import React from "react";
 import { Table } from "reactstrap";
 
 export default ({ queryResult: { rows, fields, command, rowCount } }) => {
+  if (
+    ["CALL", "INSERT", "CREATE", "DROP", "UPDATE", "DELETE"].includes(command)
+  ) {
+    return (
+      <div className="results-table table-responsive">
+        <h3>{command} successful!</h3>
+        {command === "UPDATE" ? `${rowCount} row(s) updated` : ""}
+        {command === "DELETE" ? `${rowCount} row(s) deleted` : ""}
+        {command === "INSERT" ? `${rowCount} row(s) inserted` : ""}
+        {command === "CREATE" ? `CREATE complete` : ""}
+        {command === "DROP" ? `DROP complete` : ""}
+      </div>
+    );
+  }
+
   const headers = fields.map(({ name }, index) => {
     return <th key={name + index}>{name}</th>;
   });
