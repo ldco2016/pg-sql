@@ -4,7 +4,7 @@
 }
 
 .history .react-codemirror2 {
-  max-height: 300px;
+  max-height: 75px;
   overflow: auto;
 }
 
