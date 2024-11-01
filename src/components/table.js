@@ -43,8 +43,8 @@ export default ({ queryResult: { rows, fields, command, rowCount } }) => {
       <Table className="table table-hover table-dark mb-0 table-striped">
         <thead>
           <tr>{headers}</tr>
-          <tbody>{renderedRows}</tbody>
         </thead>
+        <tbody>{renderedRows}</tbody>
       </Table>
     </div>
   );
