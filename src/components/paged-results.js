@@ -17,7 +17,7 @@ export default ({ results }) => {
   }
 
   return (
-    <div style={{ overflow: "auto", height: "100%" }}>
+    <div style={{ overflow: "auto", maxHeight: "100%", width: "100%" }}>
       <Table queryResult={firstResult} />
     </div>
   );

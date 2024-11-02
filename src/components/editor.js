@@ -27,6 +27,9 @@ const Editor = ({ value, setValue }) => {
       onBeforeChange={(e, data, value) => {
         setValue(value);
       }}
+      editorDidMount={(editor) => {
+        editor.getWrapperElement().style.fontSize = "16px";
+      }}
       onKeyDown={(editor, event) => {
         const { keyCode } = event;
 
