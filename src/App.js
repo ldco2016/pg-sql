@@ -1,3 +1,4 @@
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./app.css";
 import "./components/resizer.css";
 import "./assets/scss/theme.scss";
